@@ -61,10 +61,10 @@
 }
 
 @theme inline {
-  --font-noto-sans-khmer: var(--font-noto-sans-khmer-next), 'sans-serif';
-  --font-inter: var(--font-inter-next), 'sans-serif';
-  --font-manrope: var(--font-manrope-next), 'sans-serif';
-  --font-system: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-suwannaphum: var(--font-suwannaphum-next), sans-serif;
+  --font-kantumruy-pro: var(--font-kantumruy-pro-next), sans-serif;
+  --font-battambang: var(--font-battambang-next), sans-serif;
+  --font-noto-sans-khmer: var(--font-noto-sans-khmer-next), sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

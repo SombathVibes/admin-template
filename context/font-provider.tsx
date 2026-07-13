@@ -20,6 +20,13 @@ type FontContextType = {
 
 const FontContext = createContext<FontContextType | null>(null)
 
+const fontClassMap: Record<string, string> = {
+  'suwannaphum': 'font-suwannaphum',
+  'kantumruy-pro': 'font-kantumruy-pro',
+  'battambang': 'font-battambang',
+  'noto-sans-khmer': 'font-noto-sans-khmer',
+}
+
 export function FontProvider({ 
   children, 
   defaultFont,
@@ -46,7 +53,7 @@ export function FontProvider({
         (cls) => cls.startsWith('font-') && !['font-normal', 'font-medium', 'font-semibold', 'font-bold'].includes(cls)
       )
       classesToRemove.forEach((cls) => root.classList.remove(cls))
-      root.classList.add(`font-${font}`)
+      root.classList.add(fontClassMap[font] || 'font-noto-sans-khmer')
       
       if (size === 'sm') root.style.fontSize = '14px'
       else if (size === 'lg') root.style.fontSize = '18px'

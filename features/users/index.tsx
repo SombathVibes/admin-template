@@ -13,10 +13,12 @@ import { UsersPrimaryButtons } from './components/users-primary-buttons'
 import { UsersProvider } from './components/users-provider'
 import { UsersTable } from './components/users-table'
 import { users } from './data/users'
+import { useTranslations } from 'next-intl'
 
 export function Users() {
   const searchParams = useSearchParams()
   const router = useRouter()
+  const t = useTranslations('Users')
 
   const navigate = (opts: {
     search: Record<string, unknown> | ((prev: Record<string, unknown>) => Record<string, unknown>)
@@ -52,9 +54,9 @@ export function Users() {
       <Main className='flex flex-1 flex-col gap-4 sm:gap-6'>
         <div className='flex flex-wrap items-end justify-between gap-2'>
           <div>
-            <h2 className='text-2xl font-bold tracking-tight'>User List</h2>
+            <h2 className='text-2xl font-bold tracking-tight'>{t('title')}</h2>
             <p className='text-muted-foreground'>
-              Manage your users and their roles here.
+              {t('description')}
             </p>
           </div>
           <UsersPrimaryButtons />

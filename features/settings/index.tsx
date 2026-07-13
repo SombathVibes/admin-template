@@ -10,36 +10,40 @@ import { ProfileDropdown } from '@/components/profile-dropdown'
 import { Search } from '@/components/search'
 import { ThemeSwitch } from '@/components/theme-switch'
 import { SidebarNav } from './components/sidebar-nav'
-
-const sidebarNavItems = [
-  {
-    title: 'Profile',
-    href: '/settings',
-    icon: <UserCog size={18} />,
-  },
-  {
-    title: 'Account',
-    href: '/settings/account',
-    icon: <Wrench size={18} />,
-  },
-  {
-    title: 'Appearance',
-    href: '/settings/appearance',
-    icon: <Palette size={18} />,
-  },
-  {
-    title: 'Notifications',
-    href: '/settings/notifications',
-    icon: <Bell size={18} />,
-  },
-  {
-    title: 'Display',
-    href: '/settings/display',
-    icon: <Monitor size={18} />,
-  },
-]
+import { useTranslations } from 'next-intl'
 
 export function Settings({ children }: { children?: React.ReactNode }) {
+  const t = useTranslations('Settings')
+  const tSidebar = useTranslations('Sidebar')
+
+  const sidebarNavItems = [
+    {
+      title: tSidebar('Profile'),
+      href: '/settings',
+      icon: <UserCog size={18} />,
+    },
+    {
+      title: tSidebar('Account'),
+      href: '/settings/account',
+      icon: <Wrench size={18} />,
+    },
+    {
+      title: tSidebar('Appearance'),
+      href: '/settings/appearance',
+      icon: <Palette size={18} />,
+    },
+    {
+      title: tSidebar('Notifications'),
+      href: '/settings/notifications',
+      icon: <Bell size={18} />,
+    },
+    {
+      title: tSidebar('Display'),
+      href: '/settings/display',
+      icon: <Monitor size={18} />,
+    },
+  ]
+
   return (
     <>
       {/* ===== Top Heading ===== */}
@@ -53,10 +57,10 @@ export function Settings({ children }: { children?: React.ReactNode }) {
       <Main fixed>
         <div className='space-y-0.5'>
           <h1 className='text-2xl font-bold tracking-tight md:text-3xl'>
-            Settings
+            {t('title')}
           </h1>
           <p className='text-muted-foreground'>
-            Manage your account settings and set e-mail preferences.
+            {t('description')}
           </p>
         </div>
         <Separator className='my-4 lg:my-6' />

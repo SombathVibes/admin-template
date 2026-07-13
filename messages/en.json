@@ -1,0 +1,117 @@
+{
+  "Settings": {
+    "account": "Account",
+    "language": "Language",
+    "updateButton": "Update account",
+    "title": "Settings",
+    "description": "Manage your account settings and set e-mail preferences.",
+    "Appearance": {
+      "languageDesc": "Set the language you want to use in the dashboard.",
+      "font": "Font",
+      "fontDesc": "Set the font you want to use in the dashboard.",
+      "fontSize": "Font Size",
+      "fontSizeDesc": "Set the default font size you want to use in the dashboard.",
+      "theme": "Theme",
+      "themeDesc": "Select the theme for the dashboard.",
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "Account": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "nameDesc": "This is the name that will be displayed on your profile and in emails.",
+      "dob": "Date of birth",
+      "dobDesc": "Your date of birth is used to calculate your age."
+    }
+  },
+  "Components": {
+    "ProfileDropdown": {
+      "profile": "Profile",
+      "billing": "Billing",
+      "settings": "Settings",
+      "newTeam": "New Team",
+      "signOut": "Sign out"
+    },
+    "Search": {
+      "placeholder": "Search..."
+    },
+    "ThemeSwitch": {
+      "toggleTheme": "Toggle theme",
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "SignOutDialog": {
+      "title": "Sign out",
+      "desc": "Are you sure you want to sign out? You will need to sign in again to access your account.",
+      "confirmText": "Sign out"
+    }
+  },
+  "Dashboard": {
+    "title": "Dashboard",
+    "download": "Download",
+    "tabs": {
+      "overview": "Overview",
+      "analytics": "Analytics",
+      "reports": "Reports",
+      "notifications": "Notifications"
+    },
+    "cards": {
+      "totalRevenue": "Total Revenue",
+      "revenueChange": "+20.1% from last month",
+      "subscriptions": "Subscriptions",
+      "subscriptionsChange": "+180.1% from last month",
+      "sales": "Sales",
+      "salesChange": "+19% from last month",
+      "activeNow": "Active Now",
+      "activeNowChange": "+201 since last hour"
+    },
+    "recentSales": {
+      "title": "Recent Sales",
+      "description": "You made 265 sales this month."
+    },
+    "topNav": {
+      "overview": "Overview",
+      "customers": "Customers",
+      "products": "Products",
+      "settings": "Settings"
+    }
+  },
+  "Sidebar": {
+    "General": "General",
+    "Pages": "Pages",
+    "Other": "Other",
+    "Dashboard": "Dashboard",
+    "Tasks": "Tasks",
+    "Apps": "Apps",
+    "Chats": "Chats",
+    "Users": "Users",
+    "Auth": "Auth",
+    "Sign In": "Sign In",
+    "Sign In (2 Col)": "Sign In (2 Col)",
+    "Sign Up": "Sign Up",
+    "Forgot Password": "Forgot Password",
+    "OTP": "OTP",
+    "Errors": "Errors",
+    "Unauthorized": "Unauthorized",
+    "Forbidden": "Forbidden",
+    "Not Found": "Not Found",
+    "Internal Server Error": "Internal Server Error",
+    "Maintenance Error": "Maintenance Error",
+    "Settings": "Settings",
+    "Profile": "Profile",
+    "Account": "Account",
+    "Appearance": "Appearance",
+    "Notifications": "Notifications",
+    "Display": "Display",
+    "Help Center": "Help Center"
+  },
+  "Users": {
+    "title": "User List",
+    "description": "Manage your users and their roles here."
+  },
+  "Tasks": {
+    "title": "Tasks",
+    "description": "Here's a list of your tasks for this month!"
+  }
+}

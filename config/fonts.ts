@@ -12,7 +12,6 @@
  *
  * This properly wires Next.js optimized fonts directly into Tailwind's utility classes.
  */
-export const fonts = ['noto-sans-khmer', 'inter', 'manrope', 'system'] as const
+export const fonts = ['noto-sans-khmer', 'battambang', 'kantumruy-pro', 'suwannaphum'] as const
 export const fontSizes = ['sm', 'base', 'lg'] as const
 export type FontSize = (typeof fontSizes)[number]
-

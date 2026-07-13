@@ -11,8 +11,10 @@ import { TasksPrimaryButtons } from './components/tasks-primary-buttons'
 import { TasksProvider } from './components/tasks-provider'
 import { TasksTable } from './components/tasks-table'
 import { tasks } from './data/tasks'
+import { useTranslations } from 'next-intl'
 
 export function Tasks() {
+  const t = useTranslations('Tasks')
   return (
     <TasksProvider>
       <Header fixed>
@@ -25,9 +27,9 @@ export function Tasks() {
       <Main className='flex flex-1 flex-col gap-4 sm:gap-6'>
         <div className='flex flex-wrap items-end justify-between gap-2'>
           <div>
-            <h2 className='text-2xl font-bold tracking-tight'>Tasks</h2>
+            <h2 className='text-2xl font-bold tracking-tight'>{t('title')}</h2>
             <p className='text-muted-foreground'>
-              Here&apos;s a list of your tasks for this month!
+              {t('description')}
             </p>
           </div>
           <TasksPrimaryButtons />

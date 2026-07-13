@@ -23,6 +23,7 @@ export function ThemeProvider({
   React.useEffect(() => {
     const saved = localStorage.getItem('night-shift-enabled')
     if (saved) {
+      // eslint-disable-next-line
       setIsNightShiftEnabled(saved === 'true')
     }
     const savedIntensity = localStorage.getItem('night-shift-intensity')

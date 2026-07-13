@@ -4,6 +4,7 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { ChevronDownIcon } from '@radix-ui/react-icons'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useLocale, useTranslations } from 'next-intl'
 import { useEffect, useState } from 'react'
 import { Skeleton } from '@/components/ui/skeleton'
 import { fonts, fontSizes } from '@/config/fonts'
@@ -23,7 +24,13 @@ import {
 } from '@/components/ui/form'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 
+const languages = [
+  { label: 'English', value: 'en' },
+  { label: 'Khmer', value: 'km' },
+] as const
+
 const appearanceFormSchema = z.object({
+  language: z.string(),
   theme: z.enum(['light', 'dark']),
   font: z.enum(fonts),
   fontSize: z.enum(fontSizes),
@@ -37,11 +44,16 @@ export function AppearanceForm() {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    // eslint-disable-next-line
     setMounted(true)
   }, [])
 
+  const t = useTranslations('Settings')
+  const locale = useLocale()
+
   // This can come from your database or API.
   const defaultValues: Partial<AppearanceFormValues> = {
+    language: locale,
     theme: theme as 'light' | 'dark',
     font,
     fontSize,
@@ -57,6 +69,11 @@ export function AppearanceForm() {
     if (data.fontSize !== fontSize) setFontSize(data.fontSize)
     if (data.theme !== theme) setTheme(data.theme)
 
+    if (data.language !== locale) {
+      // eslint-disable-next-line
+      document.cookie = `NEXT_LOCALE=${data.language}; path=/; max-age=31536000; SameSite=Lax`
+      window.location.reload()
+    }
     showSubmittedData(data)
   }
 
@@ -90,10 +107,42 @@ export function AppearanceForm() {
       <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
         <FormField
           control={form.control}
+          name='language'
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{t('language')}</FormLabel>
+              <div className='relative w-max'>
+                <FormControl>
+                  <select
+                    className={cn(
+                      buttonVariants({ variant: 'outline' }),
+                      'w-50 appearance-none font-normal capitalize',
+                      'dark:bg-background dark:hover:bg-background'
+                    )}
+                    {...field}
+                  >
+                    {languages.map((lang) => (
+                      <option key={lang.value} value={lang.value}>
+                        {lang.label}
+                      </option>
+                    ))}
+                  </select>
+                </FormControl>
+                <ChevronDownIcon className='absolute inset-e-3 top-2.5 h-4 w-4 opacity-50' />
+              </div>
+              <FormDescription className='font-manrope'>
+                {t('Appearance.languageDesc')}
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
           name='font'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Font</FormLabel>
+              <FormLabel>{t('Appearance.font')}</FormLabel>
               <div className='relative w-max'>
                 <FormControl>
                   <select
@@ -114,7 +163,7 @@ export function AppearanceForm() {
                 <ChevronDownIcon className='absolute inset-e-3 top-2.5 h-4 w-4 opacity-50' />
               </div>
               <FormDescription className='font-manrope'>
-                Set the font you want to use in the dashboard.
+                {t('Appearance.fontDesc')}
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -125,7 +174,7 @@ export function AppearanceForm() {
           name='fontSize'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Font Size</FormLabel>
+              <FormLabel>{t('Appearance.fontSize')}</FormLabel>
               <div className='relative w-max'>
                 <FormControl>
                   <select
@@ -146,7 +195,7 @@ export function AppearanceForm() {
                 <ChevronDownIcon className='absolute inset-e-3 top-2.5 h-4 w-4 opacity-50' />
               </div>
               <FormDescription className='font-manrope'>
-                Set the default font size you want to use in the dashboard.
+                {t('Appearance.fontSizeDesc')}
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -157,9 +206,9 @@ export function AppearanceForm() {
           name='theme'
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Theme</FormLabel>
+              <FormLabel>{t('Appearance.theme')}</FormLabel>
               <FormDescription>
-                Select the theme for the dashboard.
+                {t('Appearance.themeDesc')}
               </FormDescription>
               <FormMessage />
               <RadioGroup
@@ -189,7 +238,7 @@ export function AppearanceForm() {
                       </div>
                     </div>
                     <span className='block w-full p-2 text-center font-normal'>
-                      Light
+                      {t('Appearance.light')}
                     </span>
                   </FormLabel>
                 </FormItem>
@@ -215,7 +264,7 @@ export function AppearanceForm() {
                       </div>
                     </div>
                     <span className='block w-full p-2 text-center font-normal'>
-                      Dark
+                      {t('Appearance.dark')}
                     </span>
                   </FormLabel>
                 </FormItem>
@@ -224,7 +273,7 @@ export function AppearanceForm() {
           )}
         />
 
-        <Button type='submit'>Update preferences</Button>
+        <Button type='submit'>{t('updateButton')}</Button>
       </form>
     </Form>
   )

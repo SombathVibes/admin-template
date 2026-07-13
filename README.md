@@ -4,6 +4,10 @@
   A stunning, feature-rich admin dashboard crafted with <strong>Shadcn UI</strong>, <strong>Next.js 16 (App Router)</strong>, and <strong>Tailwind CSS v4</strong>. Built with performance, accessibility, and modern application architecture in mind.
 </p>
 
+<p align="left">
+  <strong>🔥 Live Demo:</strong> <a href="https://admin-template-one-rho.vercel.app/">https://admin-template-one-rho.vercel.app/</a>
+</p>
+
 ## ✨ Features
 
 - **🚀 Next.js 16**: Utilizing the latest App Router, React Server Components (RSC), and Turbopack for lightning-fast dev server performance.

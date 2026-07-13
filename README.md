@@ -76,15 +76,15 @@ cd admin-template
 Install the dependencies:
 
 ```bash
-npm install
-# or pnpm install
+pnpm install
+# or npm install
 # or yarn install
 ```
 
 Start the development server with Turbopack:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

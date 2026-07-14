@@ -30,8 +30,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-        env:
-          PNPM_CONFIG_ONLY_BUILT_DEPENDENCIES_PRESET: all
 
       - name: Lint the code
         run: pnpm lint

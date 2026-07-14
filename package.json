@@ -11,14 +11,6 @@
     "format:check": "prettier --check .",
     "format": "prettier --write ."
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "@swc/core",
-      "sharp",
-      "unrs-resolver"
-    ]
-  },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-alert-dialog": "^1.1.15",

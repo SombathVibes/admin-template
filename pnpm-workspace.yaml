@@ -3,6 +3,5 @@ minimumReleaseAge: 0
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - '@swc/core'
-  - 'sharp'
-  - 'unrs-resolver'
-  - '@clerk/shared'
+  - sharp
+  - unrs-resolver

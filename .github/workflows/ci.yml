@@ -25,6 +25,9 @@ jobs:
       - name: Install pnpm
         run: npm install -g pnpm
 
+      - name: Approve all build scripts
+        run: pnpm approve-builds --all
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 

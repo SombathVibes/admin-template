@@ -64,6 +64,7 @@ export function Chats() {
     {}
   )
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const users = conversations.map(({ messages: _, ...user }) => user)
 
   return (

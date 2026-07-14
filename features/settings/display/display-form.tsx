@@ -1,18 +1,13 @@
 "use client"
 
 import { useForm } from 'react-hook-form'
-import { ChevronDownIcon } from '@radix-ui/react-icons'
-import { fonts } from '@/config/fonts'
-import { cn } from '@/lib/utils'
 import { Switch } from '@/components/ui/switch'
 import { Slider } from '@/components/ui/slider'
-import { buttonVariants } from '@/components/ui/button'
 import { useNightShift } from '@/context/theme-provider'
 import {
   Form,
   FormControl,
   FormDescription,
-  FormItem,
   FormLabel,
 } from '@/components/ui/form'
 

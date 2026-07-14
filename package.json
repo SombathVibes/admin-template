@@ -76,5 +76,14 @@
     "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4.3.2",
     "typescript": "^5.0.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@clerk/shared",
+      "@parcel/watcher",
+      "@swc/core",
+      "sharp",
+      "unrs-resolver"
+    ]
   }
 }

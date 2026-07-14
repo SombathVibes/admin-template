@@ -51,7 +51,7 @@ export function OtpForm({ className, ...props }: OtpFormProps) {
 
     setTimeout(() => {
       setIsLoading(false)
-      push('/')
+      navigate.push('/')
     }, 1000)
   }
 

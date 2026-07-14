@@ -1,5 +1,7 @@
 "use client"
 
+import Image from 'next/image'
+
 
 import { Logo } from '@/assets/logo'
 import { cn } from '@/lib/utils'
@@ -60,18 +62,14 @@ export function SignIn2() {
           '[&>img]:absolute [&>img]:top-[15%] [&>img]:left-20 [&>img]:h-full [&>img]:w-full [&>img]:object-cover [&>img]:object-top-left [&>img]:select-none'
         )}
       >
-        <img
+        <Image
           src={dashboardLight}
           className='dark:hidden'
-          width={1024}
-          height={1151}
           alt='Admin-Template'
         />
-        <img
+        <Image
           src={dashboardDark}
           className='hidden dark:block'
-          width={1024}
-          height={1138}
           alt='Admin-Template'
         />
       </div>

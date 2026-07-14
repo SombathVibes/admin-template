@@ -25,6 +25,13 @@
     }
   },
   "Components": {
+    "NavUser": {
+      "upgradeToPro": "ដំឡើងទៅ Pro",
+      "account": "គណនី",
+      "billing": "ការបង់ប្រាក់",
+      "notifications": "ការជូនដំណឹង",
+      "signOut": "ចាកចេញ"
+    },
     "ProfileDropdown": {
       "profile": "ប្រវត្តិរូប",
       "billing": "ការបង់ប្រាក់",

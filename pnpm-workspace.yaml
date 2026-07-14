@@ -1,5 +1,8 @@
 ignoredBuiltDependencies:
   - sharp
   - unrs-resolver
+  - '@clerk/shared'
+  - '@parcel/watcher'
+  - '@swc/core'
 
 minimumReleaseAge: 0

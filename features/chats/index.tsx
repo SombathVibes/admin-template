@@ -64,7 +64,7 @@ export function Chats() {
     {}
   )
 
-  const users = conversations.map(({ messages, ...user }) => user)
+  const users = conversations.map(({ messages: _, ...user }) => user)
 
   return (
     <>

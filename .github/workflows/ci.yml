@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+
   pull_request:
     branches:
       - main
@@ -16,24 +17,36 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5
 
-      # Optimized caching & setup using the official pnpm action instead of npm -g
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10 # Force v10 or v11 depending on your lockfile
-
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
           node-version: 24
-          cache: 'pnpm'
 
-      # Combined the approval into the install command to prevent frozen-lockfile mismatches
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Approve all build scripts
+        run: pnpm approve-builds --all
+
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile --dangerously-allow-all-builds
+        run: pnpm install --frozen-lockfile
+        env:
+          PNPM_CONFIG_ONLY_BUILT_DEPENDENCIES_PRESET: all
 
       - name: Lint the code
         run: pnpm lint
+
+      # - name: Analyze unused files and dependencies
+      #   run: pnpm knip
+
+      # - name: Run Prettier check
+      #   run: pnpm format:check
+
+      # - name: Install browsers
+      #   run: pnpm test:browser:install
+
+      # - name: Run tests
+      #   run: pnpm test
 
       - name: Build the project
         run: pnpm build
